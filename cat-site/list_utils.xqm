@@ -76,7 +76,7 @@ declare function app:view-document-reference($doc as node()) as node() {
   let $ref := 
   <a  target="_blank"
   title="View" 
-  href="present.xq?doc={util:document-name($doc)}">
+  href="present.xq?doc={util:document-name($doc)}">Title comes here &lt;&lt;
     {$doc//m:workList/m:work[@analog="frbr:work"]/m:title[1]/string()}
   </a>
   return $ref

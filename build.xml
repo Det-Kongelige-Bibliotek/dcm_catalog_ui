@@ -21,7 +21,7 @@
         <delete dir="${build}"/>
     </target>
 
-    <target name="service" depends="clean">
+    <target name="service">
       <mkdir dir="${build}"/>
       <mkdir dir="${service}"/>
       <mkdir dir="${service}/${target}"/>
@@ -48,7 +48,7 @@
     </target>
 
 
-    <target name="upload">
+    <target name="upload" depends="service">
       <input message="Enter password:" addproperty="server.pass" defaultvalue="">
 	<handler type="secure"/>
       </input>

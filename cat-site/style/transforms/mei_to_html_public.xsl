@@ -32,9 +32,15 @@
 	<xsl:param name="score"/>
 
 	<xsl:param name="cat" select="'cnw'"/>
-	<xsl:param name="base_uri" select="concat('http://',$hostname,'/dcm/',$cat)"/>
-	<xsl:param name="base_file_uri" select="concat('http://',$hostname,'/dcm/data-',$cat)"/>
+	<!-- xsl:param name="base_uri" select="concat('http://',$hostname,'/dcm/',$cat)"/>
+	     <xsl:param name="base_file_uri" select="concat('http://',$hostname,'/dcm/data-',$cat)"/ -->
 
+        <!-- So, we are assuming that the data is on the same host in server on port 8080 -->
+
+	<xsl:param name="base_uri" select="'http://localhost:8080/exist/rest/db/cat-site/'"/>
+	<xsl:param name="base_file_uri" select="concat('http://localhost:8080/exist/rest/db/data-',$cat)"/>
+
+        
 	<!-- GLOBAL VARIABLES -->
 
 	<!-- Default values -->

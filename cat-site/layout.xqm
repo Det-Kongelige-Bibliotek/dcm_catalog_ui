@@ -82,21 +82,22 @@ declare function layout:head($title as xs:string,
 
 declare function layout:page-head-doc($html as node()) as node()
 {
-   let $div :=
-     for $t in $html//h:title
-       let $tit := 
-	 if($t/@id) then
-	   $t/@id
-	 else
-	   ""
-       let $sub :=
-	 if($t/text()) then
-	   $t/text()
-	 else
-	   ""
-       return 
-         layout:page-head($tit,$sub)
-   return $div
+	let $div :=
+		for $t in $html//h:title
+			let $tit := 
+				if($t/@id) then
+					$t/@id
+				else
+					""
+			let $sub :=
+				if($t/text()) then
+					$t/text()
+				else
+					""
+			return 
+				layout:page-head($tit,$sub)
+
+		return $div
 };
 
 declare function layout:page-head(
